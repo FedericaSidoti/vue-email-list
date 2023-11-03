@@ -6,13 +6,18 @@
     <title>Vue Email List</title>
     <script src='https://unpkg.com/vue@3/dist/vue.global.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="./main.css">
 </head>
 <body>
+    <h1 class="title">RANDOM 10 EMAIL LIST</h1>
     <div id="app">
-        <div class="container" v-show="mails.length ===10">
+        <div class="container" v-if="mails.length ===10">
             <ul v-for="mail in mails">
                 <li>{{mail}}</li>
             </ul>
+        </div>
+        <div class="container" v-else>
+            <img src="./loading-25.gif">
         </div>
     </div>
     
